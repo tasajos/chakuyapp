@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -35,6 +36,13 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:32.1.1')
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
 
+
+    //google maps
+    implementation 'com.google.android.gms:play-services-location:18.0.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
+    //firebase
+
     // Exclude kotlin-stdlib from navigation-fragment and navigation-ui
     implementation('androidx.navigation:navigation-fragment:2.6.0') {
         exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib'
@@ -48,6 +56,10 @@ dependencies {
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20'
 
     implementation 'com.google.firebase:firebase-auth:21.1.0'
+    implementation 'com.google.firebase:firebase-firestore:24.4.1'
+    implementation 'com.google.firebase:firebase-analytics:21.0.0'
+
+    implementation 'com.firebaseui:firebase-ui-firestore:8.0.0'
     implementation 'com.firebaseui:firebase-ui-firestore:8.0.0'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.firebase:firebase-functions:16.0.0'
