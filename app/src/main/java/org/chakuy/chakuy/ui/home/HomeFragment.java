@@ -99,54 +99,55 @@ public class HomeFragment extends Fragment {
         //});
         //descargar.setOnClickListener(new View.OnClickListener() {
           //  @Override
-            //public void onClick(View view) {
+          //public void onClick(View view) {
                 // Acción para la tarjeta "Descargar"
                 // Aquí puedes implementar el comportamiento deseado
 
-              //  List<chakuydb> dataList = new ArrayList<>();
-                //Query query = hbdbRef;
-                //query.get().addOnSuccessListener(queryDocumentSnapshots -> {
-                  //  for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
-                    //    chakuydb data = document.toObject(chakuydb.class);
-                      //  dataList.add(data);
-                    //}
+            //List<chakuydb> dataList = .
+              //  new ArrayList<>();
+             //Query query = hbdbRef;
+             //query.get().addOnSuccessListener(queryDocumentSnapshots -> {
+               //for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
+                 //chakuydb data = document.toObject(chakuydb.class);
+               //dataList.add(data);
+             //}
 
-                    //Workbook workbook = new XSSFWorkbook();
-                    //Sheet sheet = workbook.createSheet("Datos MTP");
+             //Workbook workbook = new XSSFWorkbook();
+             //Sheet sheet = workbook.createSheet("Datos MTP");
 
-                    //int rowNum = 0;
-                    //for (chakuydb data : dataList) {
-                      //  Row row = sheet.createRow(rowNum++);
+             //int rowNum = 0;
+             //for (chakuydb data : dataList) {
+              //Row row = sheet.createRow(rowNum++);
 
-                        //row.createCell(0).setCellValue(data.getArea());
-                        //row.createCell(1).setCellValue(data.getDescripcion());
-                        //row.createCell(2).setCellValue(data.getEstado());
-                        //row.createCell(3).setCellValue(data.getNombre());
-                        //row.createCell(4).setCellValue(data.getFecha());
+             //row.createCell(0).setCellValue(data.getArea());
+             //row.createCell(1).setCellValue(data.getDescripcion());
+             //row.createCell(2).setCellValue(data.getEstado());
+             //row.createCell(3).setCellValue(data.getNombre());
+             //row.createCell(4).setCellValue(data.getFecha());
 
-                    //}
+             }
 
-                    //String filePath = getExternalFilesDir(null).getPath().toString() + "/datos_hbdb.xlsx";
-                    //String filePath = requireActivity().getExternalFilesDir(null).getPath() + "/datos_registros.xlsx";
-                    //try (FileOutputStream outputStream = new FileOutputStream(filePath)) {
-                      //  workbook.write(outputStream);
-                    //} catch (IOException e) {
-                      //  e.printStackTrace();
-                    //}
+             //String filePath = getExternalFilesDir(null).getPath().toString() + "/datos_hbdb.xlsx";
+             //String filePath = requireActivity().getExternalFilesDir(null).getPath() + "/datos_registros.xlsx";
+             //try (FileOutputStream outputStream = new FileOutputStream(filePath)) {
+             //workbook.write(outputStream);
+             //} catch (IOException e) {
+              //e.printStackTrace();
+             //}
 
-                    //Uri fileUri = FileProvider.getUriForFile(requireContext(), requireContext().getApplicationContext().getPackageName() + ".provider", new File(filePath));
+             //Uri fileUri = FileProvider.getUriForFile(requireContext(), requireContext().getApplicationContext().getPackageName() + ".provider", new File(filePath));
 
-                    //Intent intent = new Intent(Intent.ACTION_SEND);
-                    //intent.setType("application/vnd.ms-excel");
-                    //intent.putExtra(Intent.EXTRA_STREAM, fileUri);
-                    //intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                    //startActivity(Intent.createChooser(intent, "Compartir archivo"));
+             //Intent intent = new Intent(Intent.ACTION_SEND);
+             //intent.setType("application/vnd.ms-excel");
+             //intent.putExtra(Intent.EXTRA_STREAM, fileUri);
+             //intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+             //startActivity(Intent.createChooser(intent, "Compartir archivo"));
 
-                //});
+             //});
 
 
 
-                //Toast.makeText(getActivity(), "Descargando....espera unos segundos", Toast.LENGTH_SHORT).show();
+             //Toast.makeText(getActivity(), "Descargando....espera unos segundos", Toast.LENGTH_SHORT).show();
             //}
         //});
 
@@ -167,4 +168,4 @@ public class HomeFragment extends Fragment {
         //startActivity(new Intent(getActivity(), login.class));
         //getActivity().finish();
     //}
-}
+//}
