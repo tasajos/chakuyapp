@@ -78,15 +78,15 @@ public class HomeFragment extends Fragment {
         });
 
 
-  //*      listado.setOnClickListener(new View.OnClickListener() {
-     //       @Override
-        //    public void onClick(View view) {
+        listado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 // Acción para la tarjeta "Listado"
                 // Aquí puedes implementar el comportamiento deseado
-          //      Navigation.findNavController(view).navigate(R.id.nav_lista);
-            //    Toast.makeText(getActivity(), "Cargando Listado.....", Toast.LENGTH_SHORT).show();
-            //}
-        //});
+               Navigation.findNavController(view).navigate(R.id.nav_pau);
+                Toast.makeText(getActivity(), "Cargando.......", Toast.LENGTH_SHORT).show();
+            }
+       });
 
         //listadopc.setOnClickListener(new View.OnClickListener() {
           //  @Override

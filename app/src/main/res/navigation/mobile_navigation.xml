@@ -32,6 +32,11 @@
         android:name="org.chakuy.chakuy.ui.tiktok.TikTokFragment"
         android:label="@string/menu_tiktok"
         tools:layout="@layout/fragment_tik_tok" />
+    <fragment
+        android:id="@+id/nav_pau"
+        android:name="org.chakuy.chakuy.ui.gprimeros.PauFragment"
+        android:label="@string/menu_pau"
+        tools:layout="@layout/fragment_pau" />
 
 
 </navigation>
