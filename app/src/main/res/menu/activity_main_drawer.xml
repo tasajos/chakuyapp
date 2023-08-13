@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
@@ -14,7 +13,23 @@
             android:title="@string/menu_gallery" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_wchat"
             android:title="@string/menu_slideshow" />
+    </group>
+
+    <!-- Agregar un elemento de separador -->
+    <item android:title="Redes Sociales" android:enabled="false" />
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_fb"
+            android:icon="@drawable/ic_fb"
+            android:title="@string/menu_fb"
+            android:background="@color/transparent" />
+        <item
+            android:id="@+id/nav_tiktok"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_tiktok"
+            android:background="@color/transparent" />
     </group>
 </menu>

@@ -1,8 +1,11 @@
 package org.chakuy.chakuy;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -32,8 +35,9 @@ public class MainActivity extends AppCompatActivity {
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                String phoneNumber = "+59170776212";
+                String message = "Quiero consultar, Yunka Atoq Bomberos Voluntarios";
+                openWhatsAppContact(phoneNumber, message);
             }
         });
         DrawerLayout drawer = binding.drawerLayout;
@@ -61,5 +65,19 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    private void openWhatsAppContact(String phoneNumber, String message) {
+        // Crear un intent para abrir la aplicación de WhatsApp con el número de teléfono y el mensaje
+        try {
+            String url = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + Uri.encode(message);
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(url));
+            startActivity(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Mostrar un mensaje si WhatsApp no está instalado
+            Toast.makeText(this, "WhatsApp no está instalado", Toast.LENGTH_SHORT).show();
+        }
     }
 }

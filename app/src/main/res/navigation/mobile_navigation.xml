@@ -22,4 +22,16 @@
         android:name="org.chakuy.chakuy.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_fb"
+        android:name="org.chakuy.chakuy.ui.fb.fbFragment"
+        android:label="@string/menu_fb"
+        tools:layout="@layout/fragment_fb" />
+    <fragment
+        android:id="@+id/nav_tiktok"
+        android:name="org.chakuy.chakuy.ui.tiktok.TikTokFragment"
+        android:label="@string/menu_tiktok"
+        tools:layout="@layout/fragment_tik_tok" />
+
+
 </navigation>
