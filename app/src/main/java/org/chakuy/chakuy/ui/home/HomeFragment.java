@@ -45,6 +45,8 @@ public class HomeFragment extends Fragment {
     private LinearLayout linearLayoutAgregar;
     private LinearLayout listado;
     private LinearLayout descargar;
+
+    private LinearLayout incorporate;
     private LinearLayout cerrarsesion;
 
     private LinearLayout listadopc;
@@ -59,9 +61,10 @@ public class HomeFragment extends Fragment {
 
         linearLayoutAgregar = root.findViewById(R.id.linearLayoutAgregar);
         listado = root.findViewById(R.id.listado);
-        descargar = root.findViewById(R.id.descargar);
+       //descargar = root.findViewById(R.id.descargar);
         cerrarsesion = root.findViewById(R.id.cerrarsesion);
         listadopc = root.findViewById(R.id.listadopc);
+        incorporate = root.findViewById(R.id.incorporate);
 
         setupCardClickListeners();
 
@@ -87,6 +90,15 @@ public class HomeFragment extends Fragment {
                 Toast.makeText(getActivity(), "Cargando.......", Toast.LENGTH_SHORT).show();
             }
        });
+
+
+        incorporate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Navegar a GalleryFragment
+                Navigation.findNavController(view).navigate(R.id.nav_inco);
+            }
+        });
 
         //listadopc.setOnClickListener(new View.OnClickListener() {
           //  @Override

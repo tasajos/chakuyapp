@@ -37,6 +37,11 @@
         android:name="org.chakuy.chakuy.ui.gprimeros.PauFragment"
         android:label="@string/menu_pau"
         tools:layout="@layout/fragment_pau" />
+    <fragment
+        android:id="@+id/nav_inco"
+        android:name="org.chakuy.chakuy.ui.incorporate.IncorpFragment"
+        android:label="@string/menu_incorpo"
+        tools:layout="@layout/fragment_incorp" />
 
 
 </navigation>

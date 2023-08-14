@@ -13,6 +13,7 @@
     <string name="menu_fb">Facebook</string>
     <string name="menu_tiktok">TikTok</string>
     <string name="menu_pau">Primeros Auxilios</string>
+    <string name="menu_incorpo">Incorporate</string>
 
 
     <string-array name="tipos">
@@ -26,6 +27,13 @@
         <item>Emergencia Medica</item>
         <item>Rescate Animal</item>
         <item>Apoyo</item>
+    </string-array>
+
+    <string name="seleccionarpost">Seleccionar</string>
+    <string-array name="selec_post">
+        <item>SI</item>
+        <item>NO</item>
+
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

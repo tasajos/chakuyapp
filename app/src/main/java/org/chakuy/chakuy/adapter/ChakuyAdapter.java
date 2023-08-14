@@ -48,11 +48,11 @@ public class ChakuyAdapter extends FirestoreRecyclerAdapter<ChakuyModel,ChakuyAd
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.nombre);
-            description = itemView.findViewById(R.id.descripcion);
-             tipo = itemView.findViewById(R.id.tipo);
-            dateb = itemView.findViewById(R.id.fecha);
-            areab = itemView.findViewById(R.id.ubicacion);
+            name = itemView.findViewById(R.id.nombrepost);
+            description = itemView.findViewById(R.id.telefonopost);
+             tipo = itemView.findViewById(R.id.tipopost);
+            dateb = itemView.findViewById(R.id.fechanacimientopost);
+            areab = itemView.findViewById(R.id.ciudadpost);
 
         }
     }

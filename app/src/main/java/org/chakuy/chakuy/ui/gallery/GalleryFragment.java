@@ -64,11 +64,11 @@ public class GalleryFragment extends Fragment implements OnMapReadyCallback {
         mfirestore = FirebaseFirestore.getInstance();
 
         // Find views by their IDs
-        nombre = root.findViewById(R.id.nombre);
-        tipoSpinner = root.findViewById(R.id.tipo);
-        descripcion = root.findViewById(R.id.descripcion);
-        ubicacion = root.findViewById(R.id.ubicacion);
-        fecha = root.findViewById(R.id.fecha);
+        nombre = root.findViewById(R.id.nombrepost);
+        tipoSpinner = root.findViewById(R.id.tipopost);
+        descripcion = root.findViewById(R.id.telefonopost);
+        ubicacion = root.findViewById(R.id.ciudadpost);
+        fecha = root.findViewById(R.id.fechanacimientopost);
         btn_registrar = root.findViewById(R.id.btn_registrar);
         btnalarma = root.findViewById(R.id.btnalarma);
 
