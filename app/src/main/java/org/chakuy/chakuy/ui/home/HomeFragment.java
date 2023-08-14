@@ -2,6 +2,7 @@ package org.chakuy.chakuy.ui.home;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +31,9 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.chakuy.chakuy.R;
+import android.widget.TextView;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 //import org.chakuy.chakuy.login;
 //import org.chakuy.chakuy.ui.verlista.slideshow.hbdbdata;
 //import org.chakuy.chakuy.ui.verlista.slideshow.vlista;
@@ -49,6 +53,7 @@ public class HomeFragment extends Fragment {
     private LinearLayout incorporate;
     private LinearLayout cerrarsesion;
 
+    private TextView txtVersion;
     private LinearLayout listadopc;
 
 
@@ -58,6 +63,15 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
+
+
+        txtVersion = root.findViewById(R.id.txtversion); //version
+        // Obtener el versionName de la aplicación
+        String versionName = getVersionName();
+
+        // Actualizar el TextView con el versionName de la aplicación
+        txtVersion.setText("Versión: " + versionName);
+
 
         linearLayoutAgregar = root.findViewById(R.id.linearLayoutAgregar);
         listado = root.findViewById(R.id.listado);
@@ -70,6 +84,17 @@ public class HomeFragment extends Fragment {
 
         return root;
     }
+    private String getVersionName() {
+        try {
+            PackageInfo packageInfo = requireActivity().getPackageManager()
+                    .getPackageInfo(requireActivity().getPackageName(), 0);
+            return packageInfo.versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            return "N/A";
+        }
+    }
+
 
     private void setupCardClickListeners() {
         linearLayoutAgregar.setOnClickListener(new View.OnClickListener() {
@@ -99,6 +124,8 @@ public class HomeFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.nav_inco);
             }
         });
+
+
 
         //listadopc.setOnClickListener(new View.OnClickListener() {
           //  @Override
