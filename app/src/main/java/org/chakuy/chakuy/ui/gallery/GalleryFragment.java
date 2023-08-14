@@ -1,8 +1,10 @@
 package org.chakuy.chakuy.ui.gallery;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -102,6 +104,15 @@ public class GalleryFragment extends Fragment implements OnMapReadyCallback {
                     Toast.makeText(requireContext(), "Ingresar todos los datos", Toast.LENGTH_SHORT).show();
                 } else {
                     saveRecord(name, type, quantity, locationValue, date);
+
+                    // Enviar mensaje de WhatsApp
+                    String whatsappMessage = "Nombre: " + name + "\n" +
+                            "Tipo: " + type + "\n" +
+                            "Cantidad: " + quantity + "\n" +
+                            "Ubicación: " + locationValue + "\n" +
+                            "Fecha: " + date;
+
+                    sendWhatsAppMessage("+59168503758", whatsappMessage);
                 }
             }
         });
@@ -182,11 +193,21 @@ public class GalleryFragment extends Fragment implements OnMapReadyCallback {
         descripcion.setText("");
         ubicacion.setText("");
 
-
         // Restablecer el spinner a la posición 0 (primer elemento)
         tipoSpinner.setSelection(0);
 
         // Actualizar el mapa para mostrar la ubicación actual
         updateMapLocation();
+    }
+
+    private void sendWhatsAppMessage(String phoneNumber, String message) {
+        try {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("http://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + message));
+            startActivity(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(requireContext(), "Error al enviar el mensaje de WhatsApp", Toast.LENGTH_SHORT).show();
+        }
     }
 }

@@ -14,7 +14,10 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:orientation="vertical">
 
             <!-- Contenido de tu diseño -->
@@ -24,8 +27,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:text="Obtener ubicacion"
-                android:src="@drawable/mapa_ok"/>
+                android:src="@drawable/mapa_ok"
+                android:text="Obtener ubicacion" />
 
             <EditText
                 android:id="@+id/ubicacions"
@@ -100,8 +103,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Fecha"
                 android:enabled="false"
+                android:hint="Fecha"
                 android:inputType="date" />
 
             <Space
@@ -110,12 +113,12 @@
 
             <ImageButton
                 android:id="@+id/btn_registrar"
-                android:layout_width="88dp"
+                android:layout_width="152dp"
                 android:layout_height="95dp"
                 android:layout_marginHorizontal="120dp"
                 android:background="#FFFFFF"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/add" />
+                app:srcCompat="@drawable/registro" />
 
         </LinearLayout>
     </RelativeLayout>

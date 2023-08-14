@@ -98,12 +98,12 @@
 
             <ImageButton
                 android:id="@+id/btn_registrar"
-                android:layout_width="88dp"
+                android:layout_width="115dp"
                 android:layout_height="95dp"
                 android:layout_marginHorizontal="120dp"
                 android:background="#FFFFFF"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/adduser" />
+                app:srcCompat="@drawable/regs" />
 
         </LinearLayout>
     </RelativeLayout>
