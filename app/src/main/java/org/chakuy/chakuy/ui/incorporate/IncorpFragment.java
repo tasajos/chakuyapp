@@ -1,17 +1,20 @@
 package org.chakuy.chakuy.ui.incorporate;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
+import android.widget.DatePicker;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
-
+import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.button.MaterialButton;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
@@ -20,13 +23,17 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import org.chakuy.chakuy.R;
 import org.chakuy.chakuy.databinding.FragmentIncorpBinding;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
 public class IncorpFragment extends Fragment {
 
+    private MaterialButton btnFechaNacimiento;
     private EditText nombrepost, telefonopost, ciudadpost;
+    private ImageButton btn_registrar;
     private Spinner tipopost;
+
     private FirebaseFirestore mfirestore;
 
     @Override
@@ -40,39 +47,73 @@ public class IncorpFragment extends Fragment {
         nombrepost = root.findViewById(R.id.nombrepost);
         telefonopost = root.findViewById(R.id.telefonopost);
         ciudadpost = root.findViewById(R.id.ciudadpost);
+        btn_registrar = root.findViewById(R.id.btn_registrar);
         tipopost = root.findViewById(R.id.tipopost);
+        btnFechaNacimiento = root.findViewById(R.id.btnFechaNacimiento);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(requireContext(),
                 R.array.selec_post, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         tipopost.setAdapter(adapter);
 
-        binding.btnRegistrar.setOnClickListener(new View.OnClickListener() {
+        btn_registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String namep = nombrepost.getText().toString().trim();
                 String typep = tipopost.getSelectedItem().toString().trim();
                 String telpost = telefonopost.getText().toString().trim();
                 String cpost = ciudadpost.getText().toString().trim();
+                String fechaNacimiento = btnFechaNacimiento.getText().toString();
 
-                if (namep.isEmpty() || typep.isEmpty() || telpost.isEmpty() ||
-                        cpost.isEmpty()) {
+                if (namep.isEmpty() || typep.isEmpty() || telpost.isEmpty() || cpost.isEmpty()) {
                     Toast.makeText(requireContext(), "Ingresar todos los datos", Toast.LENGTH_SHORT).show();
+                } else if (fechaNacimiento.equals("Seleccionar Fecha de Nacimiento")) {
+                    Toast.makeText(requireContext(), "Seleccionar fecha de nacimiento", Toast.LENGTH_SHORT).show();
                 } else {
-                    saveRecord(namep, typep, telpost, cpost);
+                    saveRecord(namep, typep, telpost, cpost, fechaNacimiento);
                 }
+            }
+        });
+
+        // Configura el listener para el botón Fecha de Nacimiento
+        btnFechaNacimiento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDatePickerDialog();
             }
         });
 
         return root;
     }
 
-    private void saveRecord(String namep, String typep, String telpost, String cpost) {
+    private void showDatePickerDialog() {
+        // Obtiene la fecha actual
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        // Muestra el diálogo del selector de fecha
+        DatePickerDialog datePickerDialog = new DatePickerDialog(requireContext(),
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        // Aquí puedes manejar la fecha seleccionada
+                        String selectedDate = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
+                        btnFechaNacimiento.setText(selectedDate);
+                    }
+                }, year, month, day);
+
+        datePickerDialog.show();
+    }
+
+    private void saveRecord(String namep, String typep, String telpost, String cpost, String fechaNacimiento) {
         Map<String, Object> map = new HashMap<>();
         map.put("nombre", namep);
         map.put("experiencia", typep);
         map.put("telefono", telpost);
         map.put("ciudad", cpost);
+        map.put("fecha", fechaNacimiento);
 
         mfirestore.collection("postyunka").add(map)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
@@ -95,5 +136,6 @@ public class IncorpFragment extends Fragment {
         telefonopost.setText("");
         tipopost.setSelection(0);
         ciudadpost.setText("");
+        btnFechaNacimiento.setText("Seleccionar Fecha de Nacimiento");
     }
 }
