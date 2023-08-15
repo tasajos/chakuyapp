@@ -47,6 +47,16 @@
         android:name="org.chakuy.chakuy.ui.seguridadcarre.SeguridadFragment"
         android:label="@string/menu_segca"
         tools:layout="@layout/fragment_seguridad" />
+    <fragment
+        android:id="@+id/nav_evacuacion"
+        android:name="org.chakuy.chakuy.ui.evacuacion.EvacuacionFragment"
+        android:label="@string/menu_procevuacion"
+        tools:layout="@layout/fragment_evacuacion" />
+    <fragment
+        android:id="@+id/nav_edseguridad"
+        android:name="org.chakuy.chakuy.ui.educacionseguridad.EducacionSeguridadFragment"
+        android:label="@string/menu_edseguridad"
+        tools:layout="@layout/fragment_educacion_seguridad" />
 
 
 </navigation>

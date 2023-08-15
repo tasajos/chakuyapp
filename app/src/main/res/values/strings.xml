@@ -15,6 +15,8 @@
     <string name="menu_pau">Primeros Auxilios</string>
     <string name="menu_segca">Seguridad en Carretera</string>
     <string name="menu_incorpo">Incorporate</string>
+    <string name="menu_procevuacion">Procedimientos de Evacuacion</string>
+    <string name="menu_edseguridad">Educacion en Seguridad</string>
 
 
     <string-array name="tipos">

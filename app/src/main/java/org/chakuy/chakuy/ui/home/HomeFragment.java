@@ -53,6 +53,8 @@ public class HomeFragment extends Fragment {
     private LinearLayout incorporate;
     private LinearLayout cerrarsesion;
 
+    private LinearLayout educacionseguridad;
+
     private TextView txtVersion;
     private LinearLayout listadopc;
 
@@ -79,6 +81,7 @@ public class HomeFragment extends Fragment {
         cerrarsesion = root.findViewById(R.id.cerrarsesion);
         listadopc = root.findViewById(R.id.listadopc);
         incorporate = root.findViewById(R.id.incorporate);
+        educacionseguridad = root.findViewById(R.id.educacionseguridad);
 
         setupCardClickListeners();
 
@@ -134,6 +137,26 @@ public class HomeFragment extends Fragment {
                 Toast.makeText(getActivity(), "Cargando.......", Toast.LENGTH_SHORT).show();
             }
         });
+
+
+        listadopc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Navegar a Procedimiento Evacuacion
+                Navigation.findNavController(view).navigate(R.id.nav_evacuacion);
+                Toast.makeText(getActivity(), "Cargando.......", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        educacionseguridad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Navegar a Procedimiento Evacuacion
+                Navigation.findNavController(view).navigate(R.id.nav_edseguridad);
+                Toast.makeText(getActivity(), "Cargando.......", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
 
 
