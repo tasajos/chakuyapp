@@ -126,6 +126,16 @@ public class HomeFragment extends Fragment {
         });
 
 
+        cerrarsesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Navegar a Seguridad en Carretera
+                Navigation.findNavController(view).navigate(R.id.nav_seguridad);
+                Toast.makeText(getActivity(), "Cargando.......", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
 
         //listadopc.setOnClickListener(new View.OnClickListener() {
           //  @Override

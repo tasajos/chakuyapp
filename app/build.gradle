@@ -12,7 +12,7 @@ android {
         minSdk 27
         targetSdk 33
         versionCode 21
-        versionName "2.1 - Yunka"
+        versionName "2.2 - Yunka"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

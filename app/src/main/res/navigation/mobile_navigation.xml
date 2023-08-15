@@ -42,6 +42,11 @@
         android:name="org.chakuy.chakuy.ui.incorporate.IncorpFragment"
         android:label="@string/menu_incorpo"
         tools:layout="@layout/fragment_incorp" />
+    <fragment
+        android:id="@+id/nav_seguridad"
+        android:name="org.chakuy.chakuy.ui.seguridadcarre.SeguridadFragment"
+        android:label="@string/menu_segca"
+        tools:layout="@layout/fragment_seguridad" />
 
 
 </navigation>
