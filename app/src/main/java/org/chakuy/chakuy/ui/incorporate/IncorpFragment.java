@@ -8,11 +8,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AlertDialog;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -33,6 +35,8 @@ public class IncorpFragment extends Fragment {
     private EditText nombrepost, telefonopost, ciudadpost;
     private ImageButton btn_registrar;
     private Spinner tipopost;
+
+    private String namep, typep, telpost, cpost, fechaNacimiento;
 
     private FirebaseFirestore mfirestore;
 
@@ -59,11 +63,11 @@ public class IncorpFragment extends Fragment {
         btn_registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String namep = nombrepost.getText().toString().trim();
-                String typep = tipopost.getSelectedItem().toString().trim();
-                String telpost = telefonopost.getText().toString().trim();
-                String cpost = ciudadpost.getText().toString().trim();
-                String fechaNacimiento = btnFechaNacimiento.getText().toString();
+                namep = nombrepost.getText().toString().trim();
+                typep = tipopost.getSelectedItem().toString().trim();
+                telpost = telefonopost.getText().toString().trim();
+                cpost = ciudadpost.getText().toString().trim();
+                fechaNacimiento = btnFechaNacimiento.getText().toString();
 
                 if (namep.isEmpty() || typep.isEmpty() || telpost.isEmpty() || cpost.isEmpty()) {
                     Toast.makeText(requireContext(), "Ingresar todos los datos", Toast.LENGTH_SHORT).show();
@@ -119,6 +123,7 @@ public class IncorpFragment extends Fragment {
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
+                        showSuccessDialog(); // Mostrar el cuadro de diálogo de éxito
                         Toast.makeText(requireContext(), "Registro Exitoso", Toast.LENGTH_SHORT).show();
                         clearForm();
                     }
@@ -129,6 +134,29 @@ public class IncorpFragment extends Fragment {
                         Toast.makeText(requireContext(), "Error al Ingresar", Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+    private void showSuccessDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+        builder.setTitle("Registro Exitoso");
+        builder.setMessage("El Departamento de Personal se pondrá en contacto contigo.");
+
+        // Crear la cadena de texto con los datos registrados
+        String message = "El Departamento de Personal se pondrá en contacto contigo.\n\n" +
+                "Nombre: " + namep + "\n" +
+                "Experiencia: " + typep + "\n" +
+                "Teléfono: " + telpost + "\n" +
+                "Ciudad: " + cpost + "\n" +
+                "Fecha de Nacimiento: " + fechaNacimiento;
+
+        builder.setMessage(message);
+
+        // Agregar la imagen al cuadro de diálogo
+        ImageView imageView = new ImageView(requireContext());
+        imageView.setImageResource(R.drawable.yunka256); // Cambia "ic_success" al nombre de tu imagen
+        builder.setView(imageView);
+
+        builder.setPositiveButton("Aceptar", null); // Puedes agregar algún listener si lo deseas
+        builder.create().show();
     }
 
     private void clearForm() {
