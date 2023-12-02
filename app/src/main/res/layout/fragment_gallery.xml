@@ -8,7 +8,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".ui.gallery.GalleryFragment">
+        tools:context=".ui.gallery.GalleryFragment"
+        android:background="#FFFFFF">
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -40,8 +41,8 @@
                 android:enabled="false"
                 android:hint="Ubicacion"
                 android:inputType="textPersonName"
-                android:textColor="#EDE7E7"
-                android:textColorHint="#EFE8E8"
+                android:textColor="#1C1B17"
+                android:textColorHint="#1C1B17"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -50,6 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hello World!"
+                android:textColor="#1C1B17"
                 android:visibility="invisible" />
 
             <fragment
@@ -64,6 +66,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Nombre del Denunciante"
+                android:textColorHint="#000000"
+                android:textColor="#1C1B17"
                 android:inputType="textPersonName" />
 
             <TextView
@@ -71,6 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tipo"
+                android:textColor="#1C1B17"
                 android:textSize="16sp" />
 
             <Spinner
@@ -79,8 +84,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="10dp"
+                android:background="#668AE4"
                 android:entries="@array/tipos_producto"
-                android:prompt="@string/seleccionar_tipo" />
+                android:minWidth="1dp"
+                android:prompt="@string/seleccionar_tipo"
+                android:textColor="#1C1B17" />
 
             <EditText
                 android:id="@+id/telefonopost"
@@ -88,6 +96,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Descripcion"
+                android:textColorHint="#000000"
+                android:textColor="#1C1B17"
                 android:inputType="textPersonName" />
 
             <EditText
@@ -96,6 +106,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Ubicacion"
+                android:textColorHint="#000000"
+                android:textColor="#1C1B17"
                 android:inputType="textPersonName" />
 
             <EditText
@@ -104,7 +116,9 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:enabled="false"
+                android:textColor="#1C1B17"
                 android:hint="Fecha"
+                android:textColorHint="#000000"
                 android:inputType="date" />
 
             <Space

@@ -30,7 +30,8 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                app:cardElevation="6dp"
+                android:background="@android:color/white">
 
                 <LinearLayout
                     android:id="@+id/linearLayoutAgregar"
@@ -94,7 +95,8 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                app:cardElevation="6dp"
+                android:background="@android:color/white">
 
                 <LinearLayout
                     android:id="@+id/incorporate"

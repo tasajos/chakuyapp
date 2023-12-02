@@ -84,6 +84,7 @@ public class GalleryFragment extends Fragment implements OnMapReadyCallback {
         btnalarma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                updateMapLocation();
                 String message = ubicacion.getText().toString();
                 // Envía mensajes de WhatsApp si es necesario
                 //sendWhatsAppMessages(Arrays.asList("+59177087685", "+59163962491"), message);
