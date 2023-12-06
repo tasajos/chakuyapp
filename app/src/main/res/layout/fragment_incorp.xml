@@ -3,12 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-    tools:context=".ui.incorporate.IncorpFragment">
+        android:background="#FFFFFF"
+        tools:context=".ui.incorporate.IncorpFragment">
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -32,8 +34,8 @@
                 android:enabled="false"
                 android:hint="Formulario de Incorporacion"
                 android:inputType="textPersonName"
-                android:textColor="#EDE7E7"
-                android:textColorHint="#EFE8E8"
+                android:textColor="#1C1B17"
+                android:textColorHint="#1C1B17"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -50,13 +52,17 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Nombre"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColor="#1C1B17"
+                android:textColorHint="#1C1B17" />
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tiene Experiencia"
+                android:textColor="#1C1B17"
+                android:textColorHint="#1C1B17"
                 android:textSize="16sp" />
 
             <Spinner
@@ -65,7 +71,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="10dp"
+                android:background="#6EC8E4"
                 android:entries="@array/selec_post"
+                android:minWidth="1dp"
                 android:prompt="@string/seleccionarpost" />
 
             <EditText
@@ -74,7 +82,9 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Telefono"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColor="#1C1B17"
+                android:textColorHint="#1C1B17" />
 
             <EditText
                 android:id="@+id/ciudadpost"
@@ -82,15 +92,21 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Ciudad"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColor="#1C1B17"
+                android:textColorHint="#1C1B17" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnFechaNacimiento"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:background="#D65555"
                 android:text="Seleccionar Fecha de Nacimiento"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                android:textColor="#1C1B17"
+                android:textColorHint="#1C1B17"
+                app:backgroundTint="#7ECCD6" />
 
             <Space
                 android:layout_width="match_parent"

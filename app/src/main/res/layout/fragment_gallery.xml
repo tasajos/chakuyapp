@@ -3,13 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".ui.gallery.GalleryFragment"
-        android:background="#FFFFFF">
+        android:background="#FFFFFF"
+        tools:context=".ui.gallery.GalleryFragment">
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -66,9 +67,9 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Nombre del Denunciante"
-                android:textColorHint="#000000"
+                android:inputType="textPersonName"
                 android:textColor="#1C1B17"
-                android:inputType="textPersonName" />
+                android:textColorHint="#000000" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -96,9 +97,9 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Descripcion"
-                android:textColorHint="#000000"
+                android:inputType="textPersonName"
                 android:textColor="#1C1B17"
-                android:inputType="textPersonName" />
+                android:textColorHint="#000000" />
 
             <EditText
                 android:id="@+id/ciudadpost"
@@ -106,9 +107,9 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Ubicacion"
-                android:textColorHint="#000000"
+                android:inputType="textPersonName"
                 android:textColor="#1C1B17"
-                android:inputType="textPersonName" />
+                android:textColorHint="#000000" />
 
             <EditText
                 android:id="@+id/fechanacimientopost"
@@ -116,10 +117,10 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:enabled="false"
-                android:textColor="#1C1B17"
                 android:hint="Fecha"
-                android:textColorHint="#000000"
-                android:inputType="date" />
+                android:inputType="date"
+                android:textColor="#1C1B17"
+                android:textColorHint="#000000" />
 
             <Space
                 android:layout_width="match_parent"

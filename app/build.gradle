@@ -11,8 +11,8 @@ android {
         applicationId "org.chakuy.chakuy"
         minSdk 27
         targetSdk 33
-        versionCode 24
-        versionName "2.4 - Yunka"
+        versionCode 25
+        versionName "2.5 - Yunka"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

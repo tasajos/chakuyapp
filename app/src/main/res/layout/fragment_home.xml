@@ -37,6 +37,7 @@
                     android:id="@+id/linearLayoutAgregar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#FBF7F7"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="16dp">
@@ -69,6 +70,7 @@
                     android:id="@+id/listado"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#FBF7F7"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="16dp">
@@ -102,6 +104,7 @@
                     android:id="@+id/incorporate"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#FBF7F7"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="16dp">
@@ -134,6 +137,7 @@
                     android:id="@+id/cerrarsesion"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#FBF7F7"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="16dp">
@@ -166,6 +170,7 @@
                     android:id="@+id/listadopc"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#FBF7F7"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="16dp">
@@ -198,6 +203,7 @@
                     android:id="@+id/educacionseguridad"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#FBF7F7"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="16dp">
